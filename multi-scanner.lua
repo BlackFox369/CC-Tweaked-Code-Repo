@@ -6,7 +6,10 @@ local rad = dt.getRadiation()
 
 function radLv()
   local mult = 10^2
-  return math.floor(dt.getRadiationRaw() * mult + 0.5) / mult
+  if radR == 1e-07 then
+     return 0
+  else
+     return math.floor(dt.getRadiationRaw() * mult + 0.5) / mult
 end
 
 
